@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Database Management</title>
+  <style>
+    html {
+      text-align: center;
+      font-family: Georgia, sans-serif;
+      scroll-behavior: smooth;
+    }
+    #bgimg {
+      position: fixed;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background-image: url("img/data.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      height: 100%;
+      -webkit-filter: blur(2px);
+      -moz-filter: blur(2px);
+      -o-filter: blur(2px);
+      -ms-filter: blur(2px);
+      filter: blur(2px);
+    }
+
+    #content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+    }
+
+    h1{
+      font-size: 4vw;
+    }
+
+    #intro {
+      background-color: white;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 10px;
+      border: 2px solid red;
+      border-radius: 10px;
+    }
+
+    #projects {
+      border: 1px solid purple;
+    }
+
+    img {
+      width: 80%;
+      height: auto;
+      border: 2px solid #33ccff;
+      margin: 100px;
+      margin-bottom: 5px;
+    }
+
+    .image, .text {
+      background-color: white;
+      margin: auto;
+    }
+
+    .text {
+      font-size: 16;
+      height: 100%;
+    }
+
+    p {
+      background-color: gray;
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id=bgimg></div>
+  <div id=content>
+    <div id=intro>
+      <h1>Database Management</h1>
+      <em><h2>All my work in the wonderful world of data</h2></em>
+    </div>
+    <div id=projects>
+      <div class=image>
+        <img src="img/INFO430/ERD.jpg">
+      </div>
+      <div class=text>
+        <p>This is my the Entity Relationship Diagram for a database that a group
+          of advanced Informatics students and I were tasked with designing, implementing,
+          and presenting as part of a mock industry project, with our professor
+          playing the role of our "client". During this project, I assumed the role
+          of design team lead, requiring me to coordinate work with group members
+          (which required the use of project charters and a Gantt chart), meet with
+          the professor on a weekly basis to receive input from our "client", and
+          assume responsibility for the quality of the design, on top of the programming
+          work I needed to complete as a team member. Once this design was finalized,
+          the four of us each took a section of the design and programmed the database
+          from the ground up in SQL, using Microsoft SQL Server as our platform.
+          Finally, once the tables, business rules, constraints, aggregation fields,
+          and relationships were completed, we populated the database with a realistic
+          amount of mock data, and in the end, fulfilled our goals and the requirements
+          of the contract from the "client".
+      </div>
+    </div>
+  </div>
+</body>

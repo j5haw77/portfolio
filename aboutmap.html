@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>About Me</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"/>
+
+  <style>
+    html, body, #map { width: 100%; height: 100%; margin: 0; background: #fff; }
+  </style>
+
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js"></script>
+</head>
+
+<body>
+  <div id="map"></div>
+  <script>
+    var mymap = L.map('map', {
+      center: [39.1324219802362, -120.03422539482567],
+      zoom: 11,
+      maxZoom: 12,
+      minZoom: 3,
+      detectRetina: true // detect whether the sceen is high resolution or not.
+    });
+
+    // L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png').addTo(mymap);
+
+    var Esri_NatGeoWorldMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+    	attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC | Made by Jackson Shaw',
+    	maxZoom: 16
+    });
+
+    Esri_NatGeoWorldMap.addTo(mymap);
+
+    var markers = L.geoJson.ajax("aboutme.geojson", {
+      onEachFeature: function (feature, layer) {
+        layer.bindPopup(feature.properties.item);
+      }
+    })
+    markers.addTo(mymap);
+  </script>
+
+</body>
